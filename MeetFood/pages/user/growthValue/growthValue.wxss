@@ -1,0 +1,186 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.growthValue {
+  height: 100vh;
+}
+.growthValue .main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 30rpx;
+}
+.growthValue .main .userInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 80rpx 0 40rpx;
+  border-bottom: 1rpx solid #c1c1c1;
+}
+.growthValue .main .userInfo .userAvatar {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 0 15rpx;
+  border-radius: 50%;
+  border: 5rpx solid #dadada47;
+}
+.growthValue .main .userInfo .userAvatar image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.growthValue .main .userInfo .userId {
+  color: #333333;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+.growthValue .main .userInfo .value {
+  font-size: 26rpx;
+  color: #666666;
+}
+.growthValue .main .userInfo .value text:nth-child(1) {
+  padding: 0 25rpx 0 0;
+  border-right: 1rpx solid #c1c1c1;
+}
+.growthValue .main .userInfo .value text:nth-child(2) {
+  padding: 0 25rpx;
+}
+.growthValue .main .level {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 20rpx 30rpx;
+}
+.growthValue .main .level .level-value {
+  font-size: 26rpx;
+  color: #666666;
+  position: relative;
+  left: 0%;
+}
+.growthValue .main .level .level-value text {
+  color: #333333;
+}
+.growthValue .main .level .bar {
+  margin: 15rpx 0;
+}
+.growthValue .main .level .required-value {
+  color: #333333;
+  font-size: 26rpx;
+}
+.growthValue .main .level .level-icon {
+  display: flex;
+  flex-direction: row;
+  font-size: 36rpx;
+}
+.growthValue .main .level .level-icon text:nth-child(2) {
+  font-size: 24rpx;
+}
+.growthValue .main .level .level-icon .icon {
+  margin: 0 17% 0 0;
+}
+.growthValue .main .level .level-icon:nth-last-child(1) {
+  margin: none;
+}
+.growthValue .main .level .level-icon .level-Y {
+  color: #F44336;
+}
+.growthValue .main .level-privilege,
+.growthValue .main .task-growth {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 0 0;
+}
+.growthValue .main .level-privilege .title,
+.growthValue .main .task-growth .title {
+  padding: 20rpx;
+  color: #333333;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #c1c1c1;
+}
+.growthValue .main .level-privilege .privilege-list,
+.growthValue .main .task-growth .privilege-list {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+.growthValue .main .level-privilege .privilege-list .privilege,
+.growthValue .main .task-growth .privilege-list .privilege {
+  width: 20%;
+  text-align: center;
+}
+.growthValue .main .level-privilege .privilege-list .privilege .privilege-icon,
+.growthValue .main .task-growth .privilege-list .privilege .privilege-icon {
+  margin: 0 0 10rpx;
+}
+.growthValue .main .level-privilege .privilege-list .privilege .privilege-icon text,
+.growthValue .main .task-growth .privilege-list .privilege .privilege-icon text {
+  font-size: 40rpx;
+  background: #F44336;
+  padding: 15rpx;
+  color: #FFF;
+  border-radius: 10rpx;
+}
+.growthValue .main .level-privilege .privilege-list .privilege .privilege-icon .vip-bg,
+.growthValue .main .task-growth .privilege-list .privilege .privilege-icon .vip-bg {
+  background-color: #F44336;
+}
+.growthValue .main .level-privilege .privilege-list .privilege .privilege-icon .selection-bg,
+.growthValue .main .task-growth .privilege-list .privilege .privilege-icon .selection-bg {
+  background-color: #63E3FF;
+}
+.growthValue .main .level-privilege .privilege-list .privilege .privilege-icon .cardboard-bg,
+.growthValue .main .task-growth .privilege-list .privilege .privilege-icon .cardboard-bg {
+  background-color: #FF9D63;
+}
+.growthValue .main .level-privilege .privilege-list .privilege .privilege-icon .light-bg,
+.growthValue .main .task-growth .privilege-list .privilege .privilege-icon .light-bg {
+  background-color: #6385FF;
+}
+.growthValue .main .level-privilege .privilege-list .privilege .privilege-icon .service-bg,
+.growthValue .main .task-growth .privilege-list .privilege .privilege-icon .service-bg {
+  background-color: #2FDFDF;
+}
+.growthValue .main .level-privilege .privilege-list .privilege text,
+.growthValue .main .task-growth .privilege-list .privilege text {
+  font-size: 24rpx;
+}
+.growthValue .main .level-privilege .task-list,
+.growthValue .main .task-growth .task-list {
+  display: flex;
+  flex-direction: column;
+}
+.growthValue .main .level-privilege .task-list .task,
+.growthValue .main .task-growth .task-list .task {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.growthValue .main .level-privilege .task-list .task .content .name,
+.growthValue .main .task-growth .task-list .task .content .name {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.growthValue .main .level-privilege .task-list .task .content .value,
+.growthValue .main .task-growth .task-list .task .content .value {
+  color: #F44336;
+}
+.growthValue .main .level-privilege .task-list .task .goTask,
+.growthValue .main .task-growth .task-list .task .goTask {
+  position: absolute;
+  right: 50rpx;
+}
+.growthValue .main .level-privilege .task-list .task .goTask text,
+.growthValue .main .task-growth .task-list .task .goTask text {
+  padding: 8rpx 25rpx;
+  background: #ff574b;
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  color: #fff;
+}

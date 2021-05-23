@@ -1,0 +1,22 @@
+<view class="set-up bg-white">
+  <view class="mian">
+    <block wx:for="{{line}}" wx:key="index">
+      <view class="line {{index == 0 ?'line-avatar':''}}" bindtap="onCurNavigateTo" data-cmd="{{index}}"
+        wx:if="{{index == 0}}">
+        <text class="title">{{item.title}}</text>
+        <view class="content">
+          <image src="{{item.value}}" mode="aspectFill"></image>
+          <van-icon class="icon" name="arrow" color="#666666" size="32rpx" />
+        </view>
+      </view>
+      <view class="line" bindtap="onCurNavigateTo" data-cmd="{{index}}" wx:else>
+        <text class="title">{{item.title}}</text>
+        <view class="content">
+          {{item.value}}
+          <van-icon name="arrow" color="#999999" size="32rpx" />
+        </view>
+      </view>
+    </block>
+    <view class="logout" bindtap="onLogout">退出登录</view>
+  </view>
+</view>

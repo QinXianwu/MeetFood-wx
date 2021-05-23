@@ -1,0 +1,80 @@
+<import src="./bookingTemplate/bookingTemplate.wxml" />
+<!-- 
+sticky 当 Tab 滚动到顶部时会自动吸顶
+swipeable 开启滑动切换标签页
+animated 启用切换 tab 时的动画
+line-width 底部条宽度
+title-active-color 标题选中态颜色
+title-inactive-color 标题默认态颜色
+bind:change 当前激活的标签改变时触发
+-->
+<van-tabs swipeable animated sticky color="#f73838" line-width="100rpx" title-active-color="#f73838"
+  title-inactive-color="#666666" bind:change="onChange">
+  <van-tab title="当前">
+    <view class="hr"></view>
+    <!-- <van-count-down time="{{ 30 * 50 * 60 *10 }}" /> -->
+    <view class="new-booking bg-white">
+      <scroll-view scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+        <view class="no-booking" wx:if="{{bookingList.length==0}}">
+          <wxc-abnor type="FOOTPRINT" title="亲，您还没有预约哦~"></wxc-abnor>
+          <view class="btn-booking" bindtap="onBooking">去预约</view>
+        </view>
+        <view class="yes-bookingList" wx:else>
+          <block wx:for="{{bookingList}}" wx:key="index">
+            <view class="booking-item">
+              <view class="shop-info">
+                <view class="top">
+                  <image class="shop-logo" mode="aspectFill" src="{{item.SHOPDATA.logoUrl}}"></image>
+                  <view class="top-info">
+                    <text class="shop-title">{{item.SHOPDATA.name}}</text>
+                    <text class="booking-state">{{item.STATE}}</text>
+                  </view>
+                </view>
+                <view class="bottom">
+                  <text class="cuIcon-location"></text>
+                  <text class="shop-address">{{item.SHOPDATA.address}}</text>
+                </view>
+              </view>
+              <view class="takeNumber">
+                <text>{{item.TAKE_NUMBER}}</text>
+              </view>
+              <view class="booking-info">
+                <view class="userName-seatNumber">
+                  <text class="userName">张三</text> 先生/女士，您已成功预约<text class="seatNumber">6号桌</text>
+                </view>
+                <view class="dines-number">用餐人数： <text>1-2</text>人</view>
+                <view class="howOrder">点餐方式：<text>到店点餐</text></view>
+                <view class="phoneNumber">预留电话：<text>13800138008</text></view>
+                <view class="bookingTime">预约时间：<text>2021-04-31 16:33:59</text></view>
+                <view class="orderNumber" wx:if="{{historyBooking[0].orderNumber}}">
+                  订单编号：<text>2021043116335913800</text>
+                </view>
+              </view>
+              <view class="warmReminder">温馨提醒：请及时到店点餐，15分钟后将会取消预约，取消预约或订单完成后即可再次预约</view>
+              <!-- 根据预约任务类型 分别显示 -->
+              <!-- <view class="takeBtn-1">
+            <view class="btn">取消预约(<text class="takeCountdown">14:59</text>)</view>
+          </view> -->
+              <view class="takeBtn-2">
+                <view class="btn1">取消预约</view>
+                <view class="hr-y"></view>
+                <view class="btn2">待付款(<text class="takeCountdown">14:59</text>)</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+  <van-tab title="历史">
+    <view class="hr"></view>
+    <view class="history-booking bg-white">
+      <scroll-view scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+        <view class="no" wx:if="{{historyBooking.length == 0}}">暂无记录</view>
+        <view class="yes" wx:else>
+          <template is="bookingItem" data="{{historyBooking}}"></template>
+        </view>
+      </scroll-view>
+    </view>
+  </van-tab>
+</van-tabs>

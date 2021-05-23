@@ -1,0 +1,51 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.bindPhoneNumber {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.bindPhoneNumber .main {
+  padding: 30rpx;
+}
+.bindPhoneNumber .main .line {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #c1c1c1;
+  color: #333333;
+  font-size: 26rpx;
+}
+.bindPhoneNumber .main .line .phoneNumber-title,
+.bindPhoneNumber .main .line .code-title {
+  width: 130rpx;
+  margin: 0 10rpx 0 0;
+}
+.bindPhoneNumber .main .line .icon,
+.bindPhoneNumber .main .line .sendCode {
+  position: absolute;
+  right: 45rpx;
+}
+.bindPhoneNumber .main .submitBtn {
+  margin: 60rpx auto;
+  width: 450rpx;
+}
+.bindPhoneNumber .main .submitBtn button {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  background: #ff564a;
+  color: #FFF;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s;
+}
+.bindPhoneNumber .main .submitBtn button:active {
+  background: #dc4136;
+}

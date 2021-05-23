@@ -1,0 +1,82 @@
+@color-03: #333333;
+@color-06: #666666;
+@color-09: #999999;
+@color-0c3: #c3c3c3;
+@color-0c1: #c1c1c1;
+@color-0f1: #f1f1f1;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback {
+  .main {
+    .column;
+
+    .description-text,
+    .description-image,
+    .contact {
+      margin: 0 0 10rpx;
+
+      .top {
+        .row;
+        align-items: center;
+        margin: 20rpx 20rpx 5px;
+        font-size: 26rpx;
+        color: @color-06;
+
+        .content-length {
+          position: absolute;
+          right: 20rpx;
+        }
+
+        .image-length {
+          position: absolute;
+          right: 20rpx;
+        }
+      }
+
+      .text {
+        width: 100%;
+        padding: 20rpx;
+
+        .description_text {
+          width: 100%;
+          color: @color-03;
+          font-size: 30rpx;
+        }
+      }
+
+      .imageList {
+        padding: 20rpx 0;
+      }
+
+      .phone-number {
+        padding: 20rpx;
+        font-size: 30rpx;
+        color: @color-03;
+      }
+    }
+
+    .submitBtn {
+      width: 500rpx;
+      padding: 15rpx;
+      margin: 60rpx auto;
+      text-align: center;
+      font-size: 26rpx;
+      border-radius: 10rpx;
+      border: 1rpx solid @color-0c1;
+      transition: all 0.3s;
+
+      &:active {
+        background-color: #d4d4d4;
+      }
+    }
+  }
+}

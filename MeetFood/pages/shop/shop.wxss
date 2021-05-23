@@ -1,0 +1,562 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.shop {
+  height: 100vh;
+}
+.shop .main-info {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20rpx;
+}
+.shop .main-info .shopInfo {
+  margin: 20rpx 30rpx;
+  border-radius: 15rpx;
+  padding-bottom: 30rpx;
+  box-shadow: 0 5rpx 25rpx #d8d8d8;
+}
+.shop .main-info .shopInfo .imgList {
+  margin: 15rpx 18rpx;
+}
+.shop .main-info .shopInfo .imgList swiper {
+  height: 350rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+  transform: translateY(0);
+}
+.shop .main-info .shopInfo .imgList swiper .wx-swiper-dot {
+  width: 45rpx;
+  display: inline-flex;
+  height: 8rpx;
+  margin-left: 5rpx;
+  justify-content: space-between;
+}
+.shop .main-info .shopInfo .imgList swiper .wx-swiper-dot::before {
+  content: '';
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10rpx;
+}
+.shop .main-info .shopInfo .imgList swiper .wx-swiper-dot-active::before {
+  background: #F73E3E;
+}
+.shop .main-info .shopInfo .imgList image {
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+.shop .main-info .shopInfo .info {
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 15rpx;
+}
+.shop .main-info .shopInfo .info .title {
+  width: 95%;
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.shop .main-info .shopInfo .info .other {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 22rpx;
+}
+.shop .main-info .shopInfo .info .other .score {
+  margin-left: 10rpx;
+  font-weight: 600;
+  color: #F73E3E;
+}
+.shop .main-info .shopInfo .info .other .collectionBtn {
+  position: absolute;
+  right: 60rpx;
+  font-size: 36rpx;
+}
+.shop .main-info .shopInfo .info .business-hours {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 22rpx;
+  color: #333333;
+}
+.shop .main-info .shopInfo .info .business-hours .time {
+  margin-left: 20rpx;
+}
+.shop .main-info .shopInfo .info .location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10rpx 0 0;
+  font-size: 22rpx;
+  color: #333333;
+}
+.shop .main-info .shopInfo .info .location .address {
+  width: 80%;
+  align-items: center;
+}
+.shop .main-info .shopInfo .info .location .address .icon {
+  transform: translate(0, 15%);
+}
+.shop .main-info .shopInfo .info .location .contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 20%;
+  text-align: center;
+  justify-content: center;
+}
+.shop .select-bar {
+  padding: 10rpx 0;
+}
+.shop .select-bar .main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-size: 30rpx;
+  color: #666666;
+}
+.shop .select-bar .main .booking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48%;
+  transition: all 0.2s;
+}
+.shop .select-bar .main .booking .select-text {
+  width: 60rpx;
+  height: 6rpx;
+  background: #F73E3E;
+  border-radius: 15rpx;
+  margin: 10rpx 0;
+  transition: all 0.2s;
+}
+.shop .select-bar .main .dishes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 48%;
+  transition: all 0.3s;
+}
+.shop .select-bar .main .dishes .select-text {
+  width: 35rpx;
+  height: 6rpx;
+  background: #F73E3E;
+  border-radius: 15rpx;
+  margin: 10rpx 0;
+  transition: all 0.2s;
+}
+.shop .select-bar .main .select {
+  color: #F73E3E;
+  font-weight: 600;
+}
+.shop .booking .main {
+  display: flex;
+  flex-direction: column;
+}
+.shop .booking .main .tableList {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+  padding: 10rpx 30rpx;
+}
+.shop .booking .main .tableList .title {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: 600;
+  padding: 0 10rpx 15rpx;
+  align-items: center;
+}
+.shop .booking .main .tableList .title .content {
+  margin: none;
+  padding: none;
+  background: none;
+  box-shadow: none;
+  border-radius: none;
+}
+.shop .booking .main .tableList .content {
+  padding: 10rpx;
+  box-shadow: 0 0 10rpx #f1f1f1;
+}
+.shop .booking .main .tableList .content .example {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20rpx 0 30rpx;
+  justify-content: center;
+  font-size: 26rpx;
+  color: #333333;
+}
+.shop .booking .main .tableList .content .example .yes-example,
+.shop .booking .main .tableList .content .example .no-example {
+  width: 40rpx;
+  height: 40rpx;
+  border: 1rpx solid #c1c1c1;
+  border-radius: 10rpx;
+  margin: 0 10rpx;
+}
+.shop .booking .main .tableList .content .example .no-example {
+  background: #F44336;
+  color: #FFF;
+  border: none;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.shop .booking .main .tableList .content .example .yes-exampleText {
+  margin-right: 30rpx;
+}
+.shop .booking .main .tableList .content .table {
+  float: left;
+  text-align: center;
+  width: 75rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  margin: 10rpx 30rpx 20rpx;
+  border: 1rpx solid #c1c1c1;
+  border-radius: 15rpx;
+  transition: all 0.3s;
+}
+.shop .booking .main .tableList .content .no-table {
+  color: #ffffff;
+  background: #F44336;
+  border-color: #F44336;
+}
+.shop .booking .main .tableList .content .yes-table {
+  color: #ff4234;
+  background: #f4433624;
+  border-color: #F44336;
+}
+.shop .booking .main .tableList .content .warm-reminder {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 20rpx 10px;
+  padding: 25rpx 0 0;
+  font-size: 26rpx;
+  color: #999999;
+}
+.shop .booking .main .btn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 100px 0 0;
+  padding: 5px 30rpx 80rpx;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  box-shadow: 0 -2rpx 10rpx #f1f1f1;
+}
+.shop .booking .main .btn .message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 26rpx;
+  margin: 0 0 20rpx;
+  padding: 15rpx 0rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.shop .booking .main .btn .message .message-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 5px 0 0;
+  border-radius: 50%;
+  padding: 5rpx;
+  background: #FF9800;
+  color: #fff;
+}
+.shop .booking .main .btn .message text {
+  color: #666666;
+}
+.shop .booking .main .btn .dinersNumberList {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 20rpx 0;
+}
+.shop .booking .main .btn .dinersNumberList .title {
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: 600;
+  padding: 0 10rpx 15rpx;
+  align-items: center;
+}
+.shop .booking .main .btn .dinersNumberList .title .content {
+  margin: 0 10rpx;
+  padding: none;
+  background: none;
+  box-shadow: none;
+  border-radius: none;
+}
+.shop .booking .main .btn .dinersNumberList .title .dnCur-icon {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 35rpx;
+  color: #FF9800;
+  font-size: 30rpx;
+}
+.shop .booking .main .btn .dinersNumberList .content {
+  margin-top: 15rpx;
+  background: #FFF;
+}
+.shop .booking .main .btn .dinersNumberList .content swiper {
+  height: 100rpx;
+}
+.shop .booking .main .btn .dinersNumberList .content .diners-number {
+  text-align: center;
+  border: 1rpx solid #c1c1c1;
+  border-radius: 5rpx;
+  margin: 10rpx 20rpx;
+  padding: 12rpx 20rpx;
+  color: #333333;
+  background: #f1f1f1;
+  transition: all 0.3s;
+}
+.shop .booking .main .btn .dinersNumberList .content .select-dn {
+  color: #ff4234;
+  background: #f4433624;
+  border-color: #F44336;
+}
+.shop .booking .main .btn .submit {
+  background: #F44336;
+  border-radius: 40rpx;
+  padding: 20rpx 0;
+  text-align: center;
+  color: #d8d8d8;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+.shop .booking .main .btn .y-table {
+  color: #FFF;
+}
+.shop .booking .main .userInfo {
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 30rpx;
+}
+.shop .booking .main .userInfo .title {
+  text-align: center;
+  font-size: 30rpx;
+  color: #666666;
+  margin-bottom: 20rpx;
+}
+.shop .booking .main .userInfo .username,
+.shop .booking .main .userInfo .phone-number,
+.shop .booking .main .userInfo .code,
+.shop .booking .main .userInfo .how-order {
+  display: flex;
+  flex-direction: column;
+}
+.shop .booking .main .userInfo .username .un-input,
+.shop .booking .main .userInfo .phone-number .un-input,
+.shop .booking .main .userInfo .code .un-input,
+.shop .booking .main .userInfo .how-order .un-input,
+.shop .booking .main .userInfo .username .pn-input,
+.shop .booking .main .userInfo .phone-number .pn-input,
+.shop .booking .main .userInfo .code .pn-input,
+.shop .booking .main .userInfo .how-order .pn-input,
+.shop .booking .main .userInfo .username .code-input,
+.shop .booking .main .userInfo .phone-number .code-input,
+.shop .booking .main .userInfo .code .code-input,
+.shop .booking .main .userInfo .how-order .code-input,
+.shop .booking .main .userInfo .username .mode,
+.shop .booking .main .userInfo .phone-number .mode,
+.shop .booking .main .userInfo .code .mode,
+.shop .booking .main .userInfo .how-order .mode {
+  background: #eeeeee;
+  padding: 15rpx 5px;
+  border-radius: 10rpx;
+  margin: 10rpx 0;
+  color: #333333;
+}
+.shop .booking .main .userInfo .username text,
+.shop .booking .main .userInfo .phone-number text,
+.shop .booking .main .userInfo .code text,
+.shop .booking .main .userInfo .how-order text {
+  font-size: 22rpx;
+  color: #333333;
+}
+.shop .booking .main .userInfo .code .code-input {
+  display: flex;
+  flex-direction: row;
+}
+.shop .booking .main .userInfo .code .code-input .getCode {
+  position: absolute;
+  right: 30rpx;
+  margin: -20rpx 0 0;
+  padding: 0 25rpx;
+  background: #379cd8;
+  border-radius: 5rpx;
+  text-align: center;
+  transition: all 0.3s;
+}
+.shop .booking .main .userInfo .code .code-input .getCode text {
+  font-size: 26rpx;
+  color: #FFF;
+}
+.shop .booking .main .userInfo .code .code-input .no-getCode {
+  background-color: #7f9eb1;
+}
+.shop .booking .main .userInfo .how-order .mode {
+  display: flex;
+  flex-direction: row;
+}
+.shop .booking .main .userInfo .how-order .mode .mode-1,
+.shop .booking .main .userInfo .how-order .mode .mode-2 {
+  display: flex;
+  flex-direction: row;
+  width: 48%;
+  align-items: center;
+}
+.shop .booking .main .userInfo .how-order .mode .mode-1 text,
+.shop .booking .main .userInfo .how-order .mode .mode-2 text {
+  font-size: 28rpx;
+  color: #666666;
+}
+.shop .booking .main .userInfo .how-order .mode .mode-1 .yes-text,
+.shop .booking .main .userInfo .how-order .mode .mode-2 .yes-text {
+  color: #F44336;
+}
+.shop .booking .main .userInfo .submit-userinfo {
+  width: 350rpx;
+  background: #379cd8;
+  padding: 15rpx 0;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  margin: 25px auto;
+  transition: all 0.1s;
+}
+.shop .booking .main .userInfo .submit-userinfo:active {
+  border: 1rpx solid #379cd8;
+  background-color: #FFF;
+  color: #379cd8;
+}
+.shop .dishes {
+  display: flex;
+  flex-direction: column;
+}
+.shop .dishes .dishes-main {
+  margin: 30rpx 40rpx 0;
+}
+.shop .dishes .dishes-main .type-title {
+  margin: 0 10rpx 30rpx;
+  color: #333333;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.shop .dishes .dishes-main .content {
+  display: flex;
+  flex-direction: row;
+  background-image: linear-gradient(to bottom, #ffffff, #fdfdfd, #fbfcfb, #fafafa, #f8f8f8);
+  border-radius: 10rpx;
+  padding: 0 0 15rpx;
+  margin: 40rpx 0 60rpx;
+}
+.shop .dishes .dishes-main .content .dishes-image {
+  width: 190rpx;
+  height: 191rpx;
+  border-radius: 50%;
+  margin: -10rpx 0 0 -10rpx;
+}
+.shop .dishes .dishes-main .content .dishes-image image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.shop .dishes .dishes-main .content .dishes-info {
+  margin: 5px 0 0 20rpx;
+  padding: 5rpx 0;
+}
+.shop .dishes .dishes-main .content .dishes-info .title {
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.shop .dishes .dishes-main .content .dishes-info .label {
+  color: #666666;
+  font-size: 26rpx;
+}
+.shop .dishes .dishes-main .content .dishes-info .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  bottom: -45rpx;
+  font-size: 20rpx;
+  color: #F73E3E;
+}
+.shop .dishes .dishes-main .content .dishes-info .price text {
+  color: #F73E3E;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin: 0 15rpx 0 5rpx;
+}
+.shop .dishes .dishes-main .content .dishes-info .price .discount {
+  width: 70rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 20rpx;
+  border-radius: 30rpx;
+  background: #ff5f5433;
+  color: #ff473a;
+  text-align: center;
+}
+.shop .dishes .dishes-main .content .dishes-info .add-number {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 250rpx;
+  height: 70rpx;
+  margin-top: -10rpx;
+  position: relative;
+  left: 230rpx;
+}
+.shop .dishes .dishes-main .content .dishes-info .add-number .subtrah,
+.shop .dishes .dishes-main .content .dishes-info .add-number .add {
+  position: absolute;
+  right: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 40rpx;
+  color: #F44336;
+  border: 3rpx solid #F44336;
+  transition: all 0.2s;
+}
+.shop .dishes .dishes-main .content .dishes-info .add-number .subtrah .icon,
+.shop .dishes .dishes-main .content .dishes-info .add-number .add .icon {
+  transform: translate(0, -7%);
+}
+.shop .dishes .dishes-main .content .dishes-info .add-number .number {
+  width: 50rpx;
+  margin: 0 25rpx;
+  color: #333;
+  font-size: 36rpx;
+  position: absolute;
+  right: 70rpx;
+  text-align: center;
+}
+.shop .dishes .dishes-main .content .dishes-info .add-number .subtrah {
+  z-index: 1;
+}
+.shop .dishes .dishes-main .content .dishes-info .add-number .add {
+  border: none;
+  color: #fff;
+  background: #F44336;
+  z-index: 2;
+}
+.shop .dishes .dishes-main .content .dishes-info .add-number .dishes-number {
+  right: 170rpx;
+}

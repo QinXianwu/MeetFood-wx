@@ -1,0 +1,191 @@
+@color-03: #333333;
+@color-06: #666666;
+@color-09: #999999;
+@color-0c3: #c3c3c3;
+@color-0c1: #c1c1c1;
+@color-0f1: #f1f1f1;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  padding-bottom: 160rpx;
+
+  .main {
+    .column;
+
+    .setUp {
+      position: absolute;
+      right: 30rpx;
+
+      .icon {
+        margin: 20rpx 15rpx 10rpx 0;
+        font-size: 36rpx;
+        color: @color-03;
+      }
+    }
+
+    .userInfo {
+      .row;
+      align-items: center;
+      padding: 100rpx 40rpx 70rpx 40rpx;
+      border-bottom: 1rpx solid @color-0c1;
+      box-shadow: 0 2rpx 20rpx #DBDBDB;
+
+      .avatar {
+        width: 110rpx;
+        height: 110rpx;
+        border-radius: 50%;
+        margin-right: 20rpx;
+
+        image {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          border: 5rpx solid #f1f1f1;
+        }
+      }
+
+      .info {
+        .column;
+
+        .username {
+          font-size: 40rpx;
+          font-weight: 600;
+          color: @color-03;
+        }
+
+        .level {
+          font-size: 22rpx;
+
+          .icon {
+            background: #F44336;
+            color: #FFF;
+            padding: 0rpx 10rpx;
+          }
+
+          .value {
+            background: aliceblue;
+            padding: 0 10rpx;
+            color: #F44336;
+
+          }
+        }
+      }
+
+      .sign-in {
+        .row;
+        align-items: center;
+        position: absolute;
+        right: 0rpx;
+        padding: 5rpx 20rpx;
+        background: #f443363d;
+        font-size: 26rpx;
+        color: #F44336;
+        font-weight: 600;
+        border-top-left-radius: 40rpx;
+        border-bottom-left-radius: 40rpx;
+      }
+    }
+
+    .apply {
+      .column;
+      padding: 40rpx;
+      padding: 40rpx;
+      margin: 50rpx 20rpx 20rpx;
+      border-radius: 10rpx;
+      /* box-shadow: 0 5rpx 20rpx #c1c1c1; */
+      border: 1rpx solid @color-0c1;
+
+
+      .top {
+        .row;
+        padding-bottom: 20rpx;
+
+        .growth-value,
+        .subscribe-shop,
+        .trust-points {
+          .row;
+          width: 33%;
+          justify-content: center;
+          color: #333;
+          font-size: 40rpx;
+
+          text {
+            margin: 0 5rpx;
+            font-size: 26rpx;
+          }
+        }
+
+        .subscribe-shop {
+          border-left: 1rpx solid @color-0c1;
+          border-right: 1rpx solid @color-0c1;
+        }
+      }
+
+      .orders {
+        .column;
+        padding-top: 20rpx;
+        border-top: 1rpx solid @color-0c1;
+
+        .top {
+          .row;
+          margin: 10rpx 0;
+          font-size: 26rpx;
+
+          .title {
+            color: @color-03;
+            font-size: 28rpx;
+            font-weight: 600;
+          }
+
+          .allOrders {
+            .row;
+            position: absolute;
+            right: 50rpx;
+            align-items: center;
+          }
+        }
+
+        .main {
+          .row;
+
+          .pending-payment,
+          .pending-used,
+          .pending-evaluated,
+          .refunds-aftermarket {
+            .column;
+            width: 25%;
+            text-align: center;
+            color: @color-06;
+            font-size: 48rpx;
+
+            text {
+              font-size: 26rpx;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.yuqing-logo {
+  width: 350rpx;
+  margin: 0 auto;
+
+  image {
+    width: 100%;
+  }
+}
+
+
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";

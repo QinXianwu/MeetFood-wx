@@ -1,0 +1,91 @@
+<view class="home bg-white">
+  <scroll-view scroll-y="true" scroll-with-animation="true" enable-back-to-top="true"
+    bindscrolltolower="loadRecommendData">
+    <view class="home-top">
+      <!-- 天气 日期 定位 -->
+      <view class="newdateinfo">
+        <view class="newinfo">
+          <text class="newdate">{{newLocationInfo.date}}</text><text
+            class="newdate-week">{{newLocationInfo.week}}</text>
+          <text class="hours">{{newLocationInfo.weather}}{{newLocationInfo.temperature}}</text>
+        </view>
+        <view class="positioning">{{newLocationInfo.province}}
+          {{newLocationInfo.city}}
+          <van-icon wx:if="{{!isLocationAuthorization}}" bindtap="onUpdatePositioning" color="#F44336" info="未授权"
+            name="warning-o" />
+        </view>
+        <view class="recommend">{{newLocationInfo.recommend}}</view>
+      </view>
+      <!-- 用户头像 -->
+      <view class="user-avatar">
+        <image src="{{userAvatarSrc}}" bindtap="onUser"></image>
+      </view>
+    </view>
+    <van-dialog id="van-dialog" />
+    <!-- 推荐 -->
+    <view class="home-hotActivity" scroll-x="true">
+      <swiper circular="true" previous-margin="30rpx" next-margin="30rpx">
+        <block wx:for="{{hotActivityList}}" wx:key="index">
+          <swiper-item>
+            <view class="activityInfo" bindtap="showPopup" data-aid="{{index}}">
+              <view class="code">{{item.code}}</view>
+              <view class="title">{{item.title}}</view>
+              <view class="posters">
+                <image src="{{item.imageSrc}}" mode="aspectFill"></image>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="home-recommend">
+      <view class="recommend-title">
+        <view class="title">为你推荐</view>
+        <view class="description">最新优选门店</view>
+      </view>
+      <block wx:for="{{hotShopList}}" wx:key="index">
+        <view class="recommend-shop" data-shopCur="{{index}}" bindtap="onNavigateToShop">
+          <view class="shop-logo">
+            <image src="{{item.logoUrl}}" mode="aspectFill"></image>
+          </view>
+          <view class="shop-info">
+            <view class="title">{{item.title}}</view>
+            <view class="other">
+              <van-rate value="{{item.score}}" size="{{ 26 }}rpx" allow-half readonly color="#FFD21E" void-color="#eee"
+                void-icon="star" />
+              <text class="score">{{item.score.length>0?item.score:"暂无评"}}分</text>
+              <view class="distance">
+                <text class="time-required">10分钟 </text> {{item._distance}}m
+              </view>
+            </view>
+            <view class="address">{{item.address}}</view>
+            <view class="perCapita">人均 <text>￥{{item.perCapita}}</text></view>
+          </view>
+        </view>
+      </block>
+      <view wx:if="{{isLoadShow}}">
+        <wxc-loadmore icon="{{true}}" text="正在努力加载中..." wx:if="{{isLoad}}"></wxc-loadmore>
+        <wxc-loadmore is-end="{{true}}" wx:else></wxc-loadmore>
+      </view>
+      <view wx:else></view>
+    </view>
+    <view class="placeholder"></view>
+    <van-popup show="{{ isShowActivity }}" duration="500" z-index="999" bind:close="onClose"
+      custom-style="width:100%;height: 100%;">
+      <view class="activity-close" bindtap="onClose">
+        <van-icon name="close" />
+      </view>
+      <view class="activity-main">
+        <view class="activity-code">{{activity.code}}</view>
+        <view class="activity-title">{{activity.title}}</view>
+        <view class="activity-img">
+          <image src="{{activity.imageSrc}}" mode="aspectFill"></image>
+        </view>
+        <view class="content">
+          <text>{{activity.content}}</text>
+        </view>
+      </view>
+    </van-popup>
+    <van-dialog id="van-dialog" />
+  </scroll-view>
+</view>

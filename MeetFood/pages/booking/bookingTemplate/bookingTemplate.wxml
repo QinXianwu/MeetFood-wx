@@ -1,0 +1,43 @@
+<template name="bookingItem">
+  <view class="booking-item" wx:for="{{2}}" wx:key="index">
+    <view class="shop-info">
+      <view class="top">
+        <image class="shop-logo" mode="aspectFill"
+          src="https://hbimg.huabanimg.com/c570a9747ecb0a71a5b1b72b1dc22fbbf7713bc11683-6eFBW8_fw658/format/webp">
+        </image>
+        <view class="top-info">
+          <text class="shop-title">福口居（正佳店）</text>
+          <text class="booking-state">预约成功</text>
+        </view>
+      </view>
+      <view class="bottom">
+        <text class="cuIcon-location"></text>
+        <text class="shop-address">天河区正佳广场403号（体育西路A出口直达）</text>
+      </view>
+    </view>
+    <view class="takeNumber">
+      <text>B03</text>
+    </view>
+    <view class="booking-info">
+      <view class="userName-seatNumber">
+        <text class="userName">张三</text> 先生/女士，您已成功预约<text class="seatNumber">6号桌</text>
+      </view>
+      <view class="dines-number">用餐人数： <text>1-2</text>人</view>
+      <view class="howOrder">点餐方式：<text>到店点餐</text></view>
+      <view class="phoneNumber">预留电话：<text>13800138008</text></view>
+      <view class="bookingTime">预约时间：<text>2021-04-31 16:33:59</text></view>
+      <view class="orderNumber" wx:if="{{historyBooking[0].orderNumber}}">订单编号：<text>2021043116335913800</text>
+      </view>
+    </view>
+    <view class="warmReminder">温馨提醒：请及时到店点餐，15分钟后将会取消预约，取消预约或订单完成后即可再次预约</view>
+    <!-- 根据预约任务类型 分别显示 -->
+    <!-- <view class="takeBtn-1">
+            <view class="btn">取消预约(<text class="takeCountdown">14:59</text>)</view>
+          </view> -->
+    <view class="takeBtn-2">
+      <view class="btn1">取消预约</view>
+      <view class="hr-y"></view>
+      <view class="btn2">待付款(<text class="takeCountdown">14:59</text>)</view>
+    </view>
+  </view>
+</template>

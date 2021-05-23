@@ -1,0 +1,47 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.collectionShop .main {
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx;
+  padding: 15rpx 15rpx 20rpx;
+  border-radius: 8rpx;
+  border-top-right-radius: none;
+  border-bottom-right-radius: none;
+}
+.collectionShop .main .logo {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 10rpx;
+  margin: 0 20rpx 0 0;
+}
+.collectionShop .main .logo image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+.collectionShop .main .info {
+  width: 480rpx;
+}
+.collectionShop .main .info .title {
+  color: #333333;
+  font-size: 30rpx;
+}
+.collectionShop .main .delete {
+  position: relative;
+  left: 20rpx;
+  font-size: 26rpx;
+}
+.empty {
+  width: 100%;
+  text-align: center;
+  font-size: 48rpx;
+  color: #c1c1c1;
+  margin: 245rpx 0;
+}

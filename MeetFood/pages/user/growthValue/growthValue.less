@@ -1,0 +1,211 @@
+@color-03: #333333;
+@color-06: #666666;
+@color-09: #999999;
+@color-0c3: #c3c3c3;
+@color-0c1: #c1c1c1;
+@color-0f1: #f1f1f1;
+@color-mainColor: #F44336;
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.growthValue {
+  height: 100vh;
+
+  .main {
+    .column;
+    padding: 0 0 30rpx;
+
+    .userInfo {
+      .column;
+      text-align: center;
+      align-items: center;
+      padding: 80rpx 0 40rpx;
+      border-bottom: 1rpx solid @color-0c1;
+
+      .userAvatar {
+        width: 120rpx;
+        height: 120rpx;
+        margin: 0 0 15rpx;
+        border-radius: 50%;
+        border: 5rpx solid #dadada47;
+
+        image {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      .userId {
+        color: @color-03;
+        font-size: 26rpx;
+        font-weight: 600;
+      }
+
+      .value {
+        font-size: 26rpx;
+        color: @color-06;
+
+        text:nth-child(1) {
+          padding: 0 25rpx 0 0;
+          border-right: 1rpx solid @color-0c1;
+        }
+
+        text:nth-child(2) {
+          padding: 0 25rpx;
+        }
+
+      }
+    }
+
+    .level {
+      .column;
+      padding: 20rpx 20rpx 30rpx;
+
+      .level-value {
+        font-size: 26rpx;
+        color: @color-06;
+        position: relative;
+        left: 0%;
+
+        text {
+          color: @color-03;
+        }
+      }
+
+      .bar {
+        margin: 15rpx 0;
+      }
+
+      .required-value {
+        color: @color-03;
+        font-size: 26rpx;
+      }
+
+      .level-icon {
+        .row;
+        font-size: 36rpx;
+
+        text:nth-child(2) {
+          font-size: 24rpx;
+        }
+
+        .icon {
+          margin: 0 17% 0 0;
+        }
+
+        &:nth-last-child(1) {
+          margin: none;
+        }
+
+        .level-Y {
+          color: @color-mainColor;
+        }
+      }
+    }
+
+    .level-privilege,
+    .task-growth {
+      .column;
+      margin: 20rpx 0 0;
+
+      .title {
+        padding: 20rpx;
+        color: @color-03;
+        font-size: 30rpx;
+        border-bottom: 1rpx solid @color-0c1;
+      }
+
+      .privilege-list {
+        .row;
+        margin: 15px 0;
+
+        .privilege {
+          width: 20%;
+          text-align: center;
+
+          .privilege-icon {
+            margin: 0 0 10rpx;
+
+            text {
+              font-size: 40rpx;
+              background: @color-mainColor;
+              padding: 15rpx;
+              color: #FFF;
+              border-radius: 10rpx;
+            }
+
+            .vip-bg {
+              background-color: @color-mainColor;
+            }
+
+            .selection-bg {
+              background-color: #63E3FF;
+            }
+
+            .cardboard-bg {
+              background-color: #FF9D63;
+            }
+
+            .light-bg {
+              background-color: #6385FF;
+            }
+
+            .service-bg {
+              background-color: #2FDFDF;
+            }
+          }
+
+          text {
+            font-size: 24rpx;
+          }
+        }
+      }
+
+      .task-list {
+        .column;
+
+        .task {
+          .row;
+          padding: 20rpx;
+          align-items: center;
+          border-bottom: 1rpx solid @color-0f1;
+
+          .content {
+            .name {
+              color: #333;
+              font-size: 28rpx;
+              font-weight: 600;
+            }
+
+            .value {
+              color: @color-mainColor;
+            }
+          }
+
+          .goTask {
+            position: absolute;
+            right: 50rpx;
+
+            text {
+              padding: 8rpx 25rpx;
+              background: #ff574b;
+              border-radius: 5rpx;
+              font-size: 26rpx;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

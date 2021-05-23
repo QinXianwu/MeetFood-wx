@@ -1,0 +1,40 @@
+<view class="orders">
+  <view class="main">
+    <van-sticky>
+      <view class="tab">
+        <van-tabs active="{{ active }}" line-width="30rpx" bind:change="onChange">
+          <van-tab title="全部订单"></van-tab>
+          <van-tab title="待付款"></van-tab>
+          <van-tab title="待使用"></van-tab>
+          <van-tab title="待评价"></van-tab>
+          <van-tab title="退款/售后"></van-tab>
+        </van-tabs>
+      </view>
+    </van-sticky>
+    <view class="all-orders" wx:if="{{active == 0}}">
+      <view class="content">
+        <wxc-abnor type="ORDER" title="您还没有相关订单哦" wx:if="{{ordersList.all.length == 0}}"></wxc-abnor>
+      </view>
+    </view>
+    <view class="pendingPayment-orders" wx:if="{{active == 1}}">
+      <view class="content">
+        <wxc-abnor type="ORDER" title="您还没有相关订单哦" wx:if="{{ordersList.pendingPayment.length == 0}}"></wxc-abnor>
+      </view>
+    </view>
+    <view class="pendingUsed-orders" wx:if="{{active == 2}}">
+      <view class="content">
+        <wxc-abnor type="ORDER" title="您还没有相关订单哦" wx:if="{{ordersList.pendingUsed.length == 0}}"></wxc-abnor>
+      </view>
+    </view>
+    <view class="pendingEvaluated-orders" wx:if="{{active == 3}}">
+      <view class="content">
+        <wxc-abnor type="ORDER" title="您还没有相关订单哦" wx:if="{{ordersList.pendingEvaluated.length == 0}}"></wxc-abnor>
+      </view>
+    </view>
+    <view class="refunds-aftermarket-orders" wx:if="{{active == 4}}">
+      <view class="content">
+        <wxc-abnor type="ORDER" title="您还没有相关订单哦" wx:if="{{ordersList.refundsAftermarket.length == 0}}"></wxc-abnor>
+      </view>
+    </view>
+  </view>
+</view>

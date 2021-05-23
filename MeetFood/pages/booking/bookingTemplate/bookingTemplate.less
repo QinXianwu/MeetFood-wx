@@ -1,0 +1,138 @@
+@color-03: #333333;
+@color-06: #666666;
+@color-09: #999999;
+@color-0c3: #c3c3c3;
+@color-0f1: #f1f1f1;
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.hr {
+  width: 100%;
+  height: 1rpx;
+  border-top: 1rpx solid @color-0c3;
+  position: fixed;
+  z-index: 1;
+}
+
+.booking-item {
+  .column;
+  margin: 20rpx 30rpx 65rpx 30rpx;
+  border-radius: 16rpx;
+  background: #fdfdfd;
+  box-shadow: 0 4rpx 36rpx #ECECEC;
+
+  .takeNumber {
+    font-size: 76rpx;
+    font-weight: 600;
+    text-align: center;
+    color: #101010;
+  }
+
+  .shop-info {
+    .column;
+    margin: 20rpx;
+    border-bottom: 1rpx solid @color-0c3;
+
+    .top {
+      .row;
+      align-items: center;
+      margin: 0 0 10rpx 0;
+
+      .shop-logo {
+        width: 80rpx;
+        height: 80rpx;
+        border-radius: 16rpx;
+      }
+
+      .top-info {
+        width: 80%;
+        margin-left: 20rpx;
+
+        .shop-title {
+          font-size: 34rpx;
+          font-weight: 1000;
+          color: #101010;
+        }
+
+        .booking-state {
+          float: right;
+          font-size: 30rpx;
+          color: @color-03;
+        }
+      }
+    }
+
+    .bottom {
+      margin-bottom: 15rpx;
+
+      .shop-address {
+        font-size: 26rpx;
+        color: @color-06;
+        margin-left: 5rpx;
+      }
+    }
+  }
+
+  .booking-info {
+    .column;
+    margin: 0 0 24px 50rpx;
+    font-size: 26rpx;
+    color: @color-09;
+  }
+
+  .warmReminder {
+    text-align: center;
+    margin: 0 20rpx 15rpx 20rpx;
+    font-size: 26rpx;
+  }
+
+  .takeBtn {
+    width: 100%;
+    border-top: 1rpx solid @color-0f1;
+    padding: 18rpx 0 22rpx 0;
+    font-size: 30rpx;
+  }
+
+  .takeBtn-1 {
+    .takeBtn;
+
+    .btn {
+      text-align: center;
+      color: #173A57;
+    }
+  }
+
+  .takeBtn-2 {
+    .takeBtn;
+    display: flex;
+
+    .btn1,
+    .btn2 {
+      width: 48%;
+      text-align: center;
+    }
+
+    .hr-y {
+      width: 1rpx;
+      height: 50rpx;
+      background: @color-0f1;
+    }
+
+    .btn1 {
+      color: #173A57;
+    }
+
+    .btn2 {
+      color: #FF5754;
+    }
+  }
+}

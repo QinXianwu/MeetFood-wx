@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "home": "../home/home",
+    "booking": "../booking/booking",
+    "search": "../search/search",
+    "user": "../user/user"
+  },
+  "navigationBarBackgroundColor":"#F8F8F8"
+}

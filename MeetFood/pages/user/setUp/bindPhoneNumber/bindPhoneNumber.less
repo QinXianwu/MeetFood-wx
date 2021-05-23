@@ -1,0 +1,66 @@
+@color-03: #333333;
+@color-06: #666666;
+@color-09: #999999;
+@color-0c3: #c3c3c3;
+@color-0c1: #c1c1c1;
+@color-0f1: #f1f1f1;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.bindPhoneNumber {
+  .column;
+  height: 100vh;
+
+  .main {
+    padding: 30rpx;
+
+    .line {
+      .row;
+      padding: 30rpx 0;
+      border-bottom: 1rpx solid @color-0c1;
+      color: @color-03;
+      font-size: 26rpx;
+
+      .phoneNumber-title,
+      .code-title {
+        width: 130rpx;
+        margin: 0 10rpx 0 0;
+      }
+
+      .icon,
+      .sendCode {
+        position: absolute;
+        right: 45rpx;
+      }
+    }
+
+    .submitBtn {
+      margin: 60rpx auto;
+      width: 450rpx;
+
+      button {
+        height: 70rpx;
+        line-height: 70rpx;
+        font-size: 26rpx;
+        background: #ff564a;
+        color: #FFF;
+        font-weight: 600;
+        border: none;
+        transition: all 0.3s;
+
+        &:active {
+          background: #dc4136;
+        }
+      }
+    }
+  }
+
+}

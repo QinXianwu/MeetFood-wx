@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-rate": "@vant/weapp/rate/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "wxc-loadmore": "../../dist/packages/@minui/wxc-loadmore/dist/index"
+  }
+}

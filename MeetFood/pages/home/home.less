@@ -1,0 +1,252 @@
+@color-03: #333333;
+@color-06: #666666;
+@color-09: #999999;
+@color-0c3: #c3c3c3;
+@color-0c1: #c1c1c1;
+@color-0f1: #f1f1f1;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-f1 {
+  background-color: #f1f1f1;
+}
+
+.home {
+  width: 100%;
+
+  scroll-view {
+    height: 100vh;
+  }
+
+  .home-top {
+    height: 150rpx;
+    margin: 0 30rpx 0;
+    padding: 20rpx 0 0 0;
+
+    .newdateinfo {
+      .column;
+      float: left;
+      margin: 10rpx 0 0;
+
+      .newinfo {
+        font-size: 30rpx;
+        color: @color-06;
+        margin: 0 0 3rpx;
+
+        .newdate,
+        .newdate-week {
+          margin-right: 10rpx;
+        }
+      }
+
+      .positioning {
+        .row;
+        font-size: 40rpx;
+        color: @color-03;
+        font-weight: 1000;
+      }
+    }
+
+    .user-avatar {
+      height: 100rpx;
+      float: right;
+      margin: 20rpx 0 0;
+
+      image {
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 50%;
+        border: 5rpx solid @color-0f1;
+      }
+    }
+  }
+
+  .home-hotActivity {
+    swiper {
+      height: 580rpx;
+    }
+
+    .activityInfo {
+      .column;
+      border: 1rpx solid @color-0c3;
+      border-left: none;
+      border-right: none;
+      margin: 10rpx 10rpx 20rpx 10rpx;
+      padding: 10rpx 0 0 0;
+
+      .code {
+        color: #234BD7;
+        font-size: 22rpx;
+        margin: 5rpx 0;
+      }
+
+      .title {
+        color: @color-03;
+        font-size: 40rpx
+      }
+
+      .posters {
+        margin: 10rpx 0 50rpx 0;
+
+        image {
+          width: 100%;
+          height: 370rpx;
+          border-radius: 16rpx
+        }
+      }
+    }
+  }
+
+  .home-recommend {
+    .column;
+    margin: 30rpx 0 0 40rpx;
+
+    .recommend-title {
+      .row;
+      margin: 0 0 20rpx 0;
+      // 底部对齐
+      align-items: baseline;
+
+      .title {
+        color: @color-03;
+        font-size: 44rpx;
+        font-weight: 1000;
+        margin-right: 10rpx
+      }
+
+      .description {
+        color: #3b3b3b;
+        font-size: 18rpx;
+      }
+    }
+
+    .recommend-shop {
+      .row;
+
+      .shop-logo {
+        margin: 5rpx 20rpx 0 10rpx;
+
+        image {
+          width: 180rpx;
+          height: 180rpx;
+          border-radius: 18rpx
+        }
+      }
+
+      .shop-info {
+        .column;
+        width: 100%;
+        margin: 20rpx 0;
+        padding-bottom: 50rpx;
+        border-bottom: 1rpx solid @color-0c3;
+
+        .title {
+          color: @color-03;
+          font-size: 34rpx;
+        }
+
+        .other,
+        .address,
+        .perCapita {
+          font-size: 22rpx;
+          color: @color-06;
+        }
+
+        .other {
+          .row;
+          align-items: center;
+          line-height: 20rpx;
+
+          .distance {
+            position: absolute;
+            color: @color-03;
+
+            .time-required {
+              margin-right: 20rpx;
+            }
+          }
+
+          .distance {
+            right: 30rpx;
+          }
+        }
+
+        .score {
+          margin-left: 16rpx;
+        }
+
+        .perCapita {
+          text {
+            color: #ff5c50;
+          }
+        }
+      }
+
+      &:nth-last-child(2) .shop-info {
+        border-bottom: none;
+      }
+    }
+
+  }
+
+  .placeholder {
+    padding-bottom: 180rpx;
+  }
+
+  .activity-close {
+    position: absolute;
+    right: 0;
+    margin: 15rpx 25rpx;
+    font-size: 56rpx;
+  }
+
+  .activity-main {
+    margin: 50rpx 0 0;
+    padding: 0 0 300rpx;
+
+    .activity-code {
+      margin: 0 10rpx;
+      color: #234BD7;
+      font-size: 22rpx;
+    }
+
+    .activity-title {
+      margin: 0 10rpx;
+      color: @color-03;
+      font-size: 40rpx;
+    }
+
+    .activity-img {
+      width: 100%;
+
+      image {
+        width: 100%;
+      }
+    }
+
+    .content {
+      margin: 60rpx 30rpx;
+      font-size: 30rpx;
+      color: @color-06;
+      letter-spacing: 0rpx;
+      line-height: 50rpx;
+    }
+  }
+
+}
+
+.modal-title {
+  font-size: 30rpx;
+  font-weight: none;
+}
+
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";

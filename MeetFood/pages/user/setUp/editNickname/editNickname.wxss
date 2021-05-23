@@ -1,0 +1,39 @@
+.editNickName {
+  height: 100vh;
+  padding: 30rpx;
+}
+.editNickName .input-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #c1c1c1;
+  padding-bottom: 25rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.editNickName .input-name input {
+  width: 600rpx;
+}
+.editNickName .input-name .icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  right: 50rpx;
+}
+.editNickName .save {
+  width: 600rpx;
+  height: 70rpx;
+  background: #ff564a;
+  font-size: 26rpx;
+  color: #FFF;
+  font-weight: 600;
+  text-align: center;
+  line-height: 70rpx;
+  margin: 60rpx auto;
+  border-radius: 10rpx;
+  transition: all 0.3s;
+}
+.editNickName .save:active {
+  background: #dc4136;
+}

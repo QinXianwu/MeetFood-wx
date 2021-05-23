@@ -1,0 +1,8 @@
+.btnUser {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  right: 20px;
+  margin-top: -75rpx;
+  opacity: 0;
+}

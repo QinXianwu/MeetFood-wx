@@ -1,0 +1,207 @@
+<view class="shop bg-white">
+  <view class="main-info bg-white">
+    <view class="shopInfo  bg-white">
+      <view class="imgList">
+        <swiper circular="{{true}}" indicator-dots="true" indicator-active-color="#F73E3E" autoplay="true"
+          interval="3000">
+          <block wx:for="{{imgList}}" wx:key="index">
+            <swiper-item class="swiper-item">
+              <image src="{{item.url}}" mode="aspectFill">
+              </image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="info">
+        <view class="title">{{shopData.name}}</view>
+        <view class="other">
+          <van-rate value="{{shopData.score}}" size="{{ 26 }}rpx" allow-half readonly color="#F73E3E" void-color="#eee"
+            void-icon="star" />
+          <text class="score">{{shopData.score.length>0?shopData.score:"暂无评分"}}</text>
+          <view class="collectionBtn" bindtap="onCollectionShop">
+            <text class="cuIcon-favor" wx:if="{{!isCollShop}}"></text>
+            <text class="cuIcon-favorfill" style="color: #F73E3E;" wx:else></text>
+          </view>
+        </view>
+        <view class="business-hours">
+          <text>营业时间</text>
+          <text class="time">{{shopData.biz_ext.opentime2.length > 0?shopData.biz_ext.opentime2:"无"}}</text>
+          <van-icon name="arrow" />
+        </view>
+        <view class="location">
+          <view class="address">
+            <text>{{shopData.address}}</text>
+            <van-icon class="icon" style="" name="arrow" />
+          </view>
+          <view class="contact" bindtap="onPhoneCall">
+            <van-icon name="phone-o" size="34rpx" />
+            <text class="shop-phoneNumber">联系商家</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <van-sticky>
+    <van-button type="primary">
+      <view class="select-bar  bg-white">
+        <view class="main">
+          <view class="booking {{!isSelectBar?'select':''}}" bindtap="onSelectBar" data-barCur="booking">
+            正在预约<text wx:if="{{!isSelectBar}}" class="{{isShowSelectText?'select-text':''}}"></text>
+          </view>
+          <view class="dishes  {{isSelectBar?'select':''}}" bindtap="onSelectBar" data-barCur="dishes">
+            菜品<text wx:if="{{isSelectBar}}" class="{{!isShowSelectText?'select-text':''}}"></text>
+          </view>
+        </view>
+      </view>
+    </van-button>
+  </van-sticky>
+  <view class="booking bg-white" wx:if="{{!isSelectBar}}">
+    <view class="main">
+      <view class="tableList">
+        <view class="title">
+          <view class="content">在线选座</view>
+          <view wx:if="{{userBookingNBT.tid > -1}}">{{userBookingNBT.tid+1}}号</view>
+        </view>
+        <view class="content">
+          <view class="example">
+            <!-- 可选 -->
+            <view class="yes-example"></view>
+            <text class="yes-exampleText">可选</text>
+            <!-- 不可选 -->
+            <view class="no-example">食途</view>
+            <text class="no-exampleText">已订</text>
+          </view>
+          <block wx:for="{{bookingList[dnCur].arr}}" wx:key="index">
+            <view class="table {{item.state?'no-table':''}} {{index == userBookingNBT.tid?'yes-table':''}}"
+              bindtap="{{item.state && item.type==1?'':'onSelectBooking'}}" data-type="table" data-tid="{{index}}">
+              <text wx:if="{{item.type != 1}}">{{index == userBookingNBT.tid?'食途':index+1}}</text>
+              <text wx:else>食途</text>
+            </view>
+          </block>
+          <view class="warm-reminder" wx:if="{{userBookingNBT.tid == -2 && isTakeNumber}}">温馨提醒：前面还有3位顾客,现在取号大约需要15分钟
+          </view>
+        </view>
+      </view>
+      <view class="btn bg-white">
+        <view class="message ">
+          <view class="message-icon">
+            <van-icon name="volume" />
+          </view>
+          <text>为了保证预约成功，请在距离该门店2km内提交</text>
+        </view>
+        <view class="dinersNumberList">
+          <view class="title">
+            <!-- <van-icon name="friends-o" class="icon" /> -->
+            <view class="content">就餐人数</view>
+            <view wx:if="{{dnCur!=-1}}"> {{dnCur+1}}人</view>
+            <view class="dnCur-icon" bindtap="onDNremind">
+              <van-icon name="info-o" />
+            </view>
+          </view>
+          <view class="content">
+            <swiper next-margin="580rpx" snap-to-edge="true" current="{{dnCur}}">
+              <block wx:for="{{bookingList}}" wx:key="index">
+                <swiper-item>
+                  <view class="diners-number {{dnCur==index?'select-dn':''}}" data-dncur="{{index}}" data-type="dn"
+                    bindtap="onSelectBooking">
+                    {{index+1}}</view>
+                </swiper-item>
+              </block>
+            </swiper>
+          </view>
+        </view>
+        <view class="submit {{userBookingNBT.tid != -1?'y-table':''}}"
+          bindtap="{{userBookingNBT.tid != -1?'showPopup':''}}">
+          <view class="con">
+            <text wx:if="{{userBookingNBT.tid == -1}}">请先选座</text>
+            <text wx:if="{{userBookingNBT.tid == -2 && isTakeNumber}}">立即取号</text>
+            <text wx:if="{{userBookingNBT.tid > -1 }}">确认预约</text>
+          </view>
+        </view>
+      </view>
+      <van-popup show="{{ confirmBookingShow }}" position="top" custom-style="height: 65%;" round bind:close="onClose">
+        <view class="userInfo">
+          <view class="title">填写信息</view>
+          <van-notice-bar color="#1989fa" background="#ecf9ff" left-icon="info-o" text="暂使用订阅消息替代短信" />
+          <view class="username">
+            <text>姓名</text>
+            <view class="un-input">
+              <input type="text" name="userName" placeholder="请输入姓名" value="{{tempUserInfo.username}}"
+                adjust-position="true" bindinput="onInputUserInfo" data-inputtype='un' maxlength="8" />
+            </view>
+          </view>
+          <view class="phone-number">
+            <text>手机号码</text>
+            <view class="pn-input">
+              <input type="number" name="phoneNumber" placeholder="请输入手机号码" adjust-position="true"
+                bindinput="onInputUserInfo" value="{{tempUserInfo.phoneNumber}}" data-inputtype='pn' maxlength="11" />
+            </view>
+          </view>
+          <view class="code">
+            <text>验证码</text>
+            <view class="code-input">
+              <input type="number" name="code" placeholder="请输入验证码" bindinput="onInputUserInfo" data-inputtype='co'
+                maxlength="5" />
+              <button class="getCode {{isGetCode?'no-getCode':''}}" bindtap="onSubscribeMessage">
+                <text wx:if="{{!isGetCode}}">获取验证码</text>
+                <text wx:else>重新发送（{{time}}s）</text>
+              </button>
+            </view>
+          </view>
+          <view class="how-order">
+            <text>点餐方式</text>
+            <view class="mode">
+              <view class="mode-1" bindtap="onOrderMode" data-ordermode="1">
+                <text class="{{orderMode == 1?'yes-text':''}}">在线点餐</text>
+                <van-icon name="success" size="30rpx" color="#F44336" wx:if="{{orderMode == 1}}" />
+              </view>
+              <view class="mode-2" bindtap="onOrderMode" data-ordermode="2">
+                <text class="{{orderMode == 2?'yes-text':''}}">到店点餐</text>
+                <van-icon name="success" size="30rpx" color="#F44336" wx:if="{{orderMode == 2}}" />
+              </view>
+            </view>
+          </view>
+          <view class="submit-userinfo">
+            <view class="userinfo-btn" bindtap="onSubmitBooking">
+              <text wx:if="{{!isTakeNumber}}">提交预约</text>
+              <text wx:else>立即取号</text>
+            </view>
+          </view>
+        </view>
+      </van-popup>
+    </view>
+  </view>
+  <view class="dishes bg-white" wx:else>
+    <block wx:for="{{dishesList}}" wx:for-item="dishes" wx:key="index" wx:for-index="dIndex">
+      <view class="dishes-main">
+        <view class="type-title">{{dishes.type}}</view>
+        <block wx:for="{{dishes.data}}" wx:for-index="ddIndex" wx:key="index">
+          <view class="content">
+            <view class="dishes-image">
+              <image mode="aspectFill" src="{{item.imageUrl}}">
+              </image>
+            </view>
+            <view class="dishes-info">
+              <view class="title">{{item.title}}</view>
+              <view class="label">{{item.description}}</view>
+              <view class="price">￥ <text>{{item.price}}</text>
+                <view class="discount" wx:if="{{item.discount != 10}}">{{item.discount}}折</view>
+              </view>
+              <view class="add-number">
+                <view class="subtrah {{item.number != 0?'dishes-number':''}}" bindtap="onSubtrahDishes"
+                  data-d="{{dIndex}}" data-dd="{{ddIndex}}">
+                  <van-icon class="icon" name="minus" />
+                </view>
+                <view class="number" wx:if="{{item.number != 0}}">{{item.number}}</view>
+                <view class="add" bindtap="onAddDishes" data-d="{{dIndex}}" data-dd="{{ddIndex}}">
+                  <van-icon class="icon" name="plus" />
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <van-notify id="van-notify" />
+</view>

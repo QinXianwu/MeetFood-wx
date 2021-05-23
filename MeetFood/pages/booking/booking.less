@@ -1,0 +1,82 @@
+@color-03: #333333;
+@color-06: #666666;
+@color-09: #999999;
+@color-0c3: #c3c3c3;
+@color-0f1: #f1f1f1;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.hr {
+  width: 100%;
+  height: 1rpx;
+  border-top: 1rpx solid @color-0c3;
+  position: fixed;
+  z-index: 1;
+}
+
+.new-booking,
+.history-booking {
+  scroll-view {
+    height: 100vh;
+  }
+
+  @import "./bookingTemplate/bookingTemplate.wxss";
+}
+
+.new-booking {
+
+  // 无预约
+  .no-booking {
+    .btn-booking {
+      width: 330rpx;
+      height: 60rpx;
+      background: #f73838;
+      margin: 0 auto;
+      color: #fff;
+      border-radius: 50rpx;
+      text-align: center;
+      line-height: 60rpx;
+      font-size: 26rpx;
+      transition: background 0.1s;
+
+      &:active {
+        border: 1rpx solid #f73838;
+        background: #FFF;
+        color: #f73838;
+      }
+    }
+  }
+
+  .yes-bookingList {
+    width: 100%;
+    padding-top: 20rpx;
+    padding-bottom: 260rpx;
+  }
+}
+
+.history-booking {
+  .no {
+    text-align: center;
+    margin: 300rpx 0 0 0;
+    font-size: 26rpx;
+    color: @color-09;
+  }
+
+  .yes {
+    width: 100%;
+    padding-top: 20rpx;
+    padding-bottom: 260rpx;
+  }
+}
+
+
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";

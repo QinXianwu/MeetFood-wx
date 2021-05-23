@@ -1,0 +1,28 @@
+<home wx:if="{{PageCur=='home'}}" bind:home="onGetUserInfo"></home>
+<booking wx:if="{{PageCur=='booking'}}" bind:booking="NavChange" newBookingData="{{newBookingData}}"></booking>
+<search wx:if="{{PageCur=='search'}}"></search>
+<user wx:if="{{PageCur=='user'}}" bind:user="NavChange"></user>
+
+<view class="cu-bar tabbar bg-white shadow foot"
+  style="height: 170rpx;border: 1rpx solid #c3c3c3;background-color: #fffffffa;">
+  <view class="action" bindtap="NavChange" data-cur="home">
+    <view class="cuIcon-home {{PageCur=='home'?'cuBarTextColor':'text-gray'}}"></view>
+    <view class="{{PageCur=='home'?'cuBarTextColor':'text-gray'}}">首页</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="booking">
+    <view class="cuIcon-time {{PageCur=='booking'?'cuBarTextColor':'text-gray'}}"></view>
+    <view class="{{PageCur=='booking'?'cuBarTextColor':'text-gray'}}">预约</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="search">
+    <view class="cuIcon-search {{PageCur=='search'?'cuBarTextColor':'text-gray'}}"></view>
+    <view class="{{PageCur=='search'?'cuBarTextColor':'text-gray'}}">搜索</view>
+  </view>
+  <view class="action">
+    <view class="{{PageCur=='user'?'cuBarTextColor':'text-gray'}}">
+      <view class="cuIcon-my {{PageCur=='user'?'cuBarTextColor':'text-gray'}}"></view>
+      我的
+      <button class="btnUser" data-cur="user" hover-class="none" open-type="getUserInfo"
+        bindtap="onGetUserInfo"></button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<view class="feedback">
+  <view class="main">
+    <view class="description-text">
+      <view class="top">
+        <text class="title">意见反馈</text>
+        <text class="content-length">{{description_text.length}}/200</text>
+      </view>
+      <view class="text bg-white">
+        <textarea type="text" class="description_text" name="description_text" placeholder="请填写10个字以上的问题描述，以便我们提供更好的帮助"
+          maxlength="200" bindinput="onInputText"></textarea>
+      </view>
+    </view>
+    <view class="description-image">
+      <view class="top">
+        <text class="title">图片（选填，提供问题书面截图，以协助我们确认问题）</text>
+        <text class="image-length">{{imgList.length}}/4</text>
+      </view>
+      <view class="imageList bg-white">
+        <view class="cu-form-group">
+          <view class="grid col-4 grid-square flex-sub">
+            <view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage"
+              data-url="{{imgList[index]}}">
+              <image src='{{imgList[index]}}' mode='aspectFill'></image>
+              <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+                <text class="cuIcon-close"></text>
+              </view>
+            </view>
+            <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+              <text class="cuIcon-cameraadd"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="contact">
+      <view class="top">
+        <text class="title">联系电话</text>
+      </view>
+      <view class="phone-number bg-white">
+        <input type="number" placeholder="选填，以便我们与你联系" name="phoneNumber" bindinput="onPhoneNumber" maxlength="11" />
+      </view>
+    </view>
+    <view class="submitBtn bg-white">
+      <view class="btn" bindtap="onSubmit">提交</view>
+    </view>
+  </view>
+  <van-notify id="van-notify" />
+</view>

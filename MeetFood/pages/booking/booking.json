@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-count-down": "@vant/weapp/count-down/index",
+    "wxc-abnor": "../../dist/packages/@minui/wxc-abnor/dist/index",
+    "wxc-loadmore": "../../dist/packages/@minui/wxc-loadmore/dist/index"
+  }
+}

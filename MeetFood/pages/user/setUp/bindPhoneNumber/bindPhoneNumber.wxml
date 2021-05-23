@@ -1,0 +1,32 @@
+<view class="bindPhoneNumber bg-white">
+  <van-notice-bar color="#1989fa" scrollable="{{false}}" background="#ecf9ff" left-icon="info-o" text="暂使用订阅消息替代短信" />
+  <view class="main">
+    <form catchsubmit="formSubmit">
+      <view class="line">
+        <text class="phoneNumber-title">手机号码</text>
+        <view class="phoneNumber">
+          <input type="number" name="phoneNumber" bindinput="onInputPhoneNumber" value="{{phoneNumber}}"
+            placeholder="请输入手机号码" maxlength="11" />
+        </view>
+        <view class="icon" bindtap="onEmptyValue">
+          <van-icon name="close" size="40rpx" color="#999" />
+        </view>
+      </view>
+      <view class="line">
+        <view class="code-title">验证码</view>
+        <view class="code">
+          <input type="number" placeholder="请输入短信验证码" name="code" maxlength="5" />
+        </view>
+        <view class="sendCode">
+          <view class="sendBtn" bindtap="onSendCode">
+            <text wx:if="{{!isGetCode}}">发送验证码</text>
+            <text wx:else>（{{time}}）后重新发送</text>
+          </view>
+        </view>
+      </view>
+      <view class="submitBtn">
+        <button formType="submit" hover-class="none">确认绑定</button>
+      </view>
+    </form>
+  </view>
+</view>

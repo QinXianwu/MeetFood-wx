@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarBackgroundColor": "#f8f8f8",
+  "navigationBarTitleText": "我的信任分"
+}

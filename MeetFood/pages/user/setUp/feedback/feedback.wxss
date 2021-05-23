@@ -1,0 +1,77 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.feedback .main {
+  display: flex;
+  flex-direction: column;
+}
+.feedback .main .description-text,
+.feedback .main .description-image,
+.feedback .main .contact {
+  margin: 0 0 10rpx;
+}
+.feedback .main .description-text .top,
+.feedback .main .description-image .top,
+.feedback .main .contact .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20rpx 20rpx 5px;
+  font-size: 26rpx;
+  color: #666666;
+}
+.feedback .main .description-text .top .content-length,
+.feedback .main .description-image .top .content-length,
+.feedback .main .contact .top .content-length {
+  position: absolute;
+  right: 20rpx;
+}
+.feedback .main .description-text .top .image-length,
+.feedback .main .description-image .top .image-length,
+.feedback .main .contact .top .image-length {
+  position: absolute;
+  right: 20rpx;
+}
+.feedback .main .description-text .text,
+.feedback .main .description-image .text,
+.feedback .main .contact .text {
+  width: 100%;
+  padding: 20rpx;
+}
+.feedback .main .description-text .text .description_text,
+.feedback .main .description-image .text .description_text,
+.feedback .main .contact .text .description_text {
+  width: 100%;
+  color: #333333;
+  font-size: 30rpx;
+}
+.feedback .main .description-text .imageList,
+.feedback .main .description-image .imageList,
+.feedback .main .contact .imageList {
+  padding: 20rpx 0;
+}
+.feedback .main .description-text .phone-number,
+.feedback .main .description-image .phone-number,
+.feedback .main .contact .phone-number {
+  padding: 20rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+.feedback .main .submitBtn {
+  width: 500rpx;
+  padding: 15rpx;
+  margin: 60rpx auto;
+  text-align: center;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #c1c1c1;
+  transition: all 0.3s;
+}
+.feedback .main .submitBtn:active {
+  background-color: #d4d4d4;
+}

@@ -1,0 +1,55 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.set-up {
+  height: 100vh;
+}
+.set-up .mian {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+}
+.set-up .mian .line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #c1c1c1;
+  padding: 30rpx 0;
+  color: #333333;
+  font-size: 30rpx;
+}
+.set-up .mian .line .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  right: 30rpx;
+  color: #666666;
+}
+.set-up .mian .line .content image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.set-up .mian .line .content .icon {
+  margin: 0 0 0 10rpx;
+}
+.set-up .mian .line-avatar {
+  padding: 50rpx 0px;
+}
+.set-up .mian .logout {
+  width: 450rpx;
+  height: 70rpx;
+  color: #666666;
+  margin: 70rpx auto;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 5rpx;
+  background: #f1f1f1;
+  border: 1rpx solid #c1c1c1;
+}

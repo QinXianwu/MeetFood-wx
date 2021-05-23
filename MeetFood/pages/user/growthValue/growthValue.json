@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-progress": "@vant/weapp/progress/index"
+  },
+  "navigationBarBackgroundColor": "#f8f8f8",
+  "navigationBarTitleText": "我的成长值"
+}

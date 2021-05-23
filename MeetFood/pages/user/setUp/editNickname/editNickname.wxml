@@ -1,0 +1,9 @@
+<view class="editNickName bg-white">
+  <view class="input-name">
+    <input type="text" placeholder="请输入昵称" bindinput="onInputName" value="{{_nickName}}" maxlength="24" />
+    <view class="icon" bindtap="onEmptyValue">
+      <van-icon name="close" size="40rpx" color="#999" />
+    </view>
+  </view>
+  <view class="save" bindtap="onSave">保存</view>
+</view>

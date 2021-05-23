@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "wxc-abnor": "../../../dist/packages/@minui/wxc-abnor/dist/index"
+  },
+  "navigationBarTitleText": "我的订单"
+}

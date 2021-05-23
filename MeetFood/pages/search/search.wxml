@@ -1,0 +1,148 @@
+<view class="search bg-white">
+  <scroll-view scroll-y="true" scroll-with-animation="true" enable-back-to-top="true"
+    bindscrolltolower="onLoadShopData">
+    <van-sticky>
+      <van-button type="primary">
+        <view class="search-box bg-white {{isSearchFocus?'search-focus':''}}">
+          <view class="main">
+            <view class="sift-city" bindtap="onSelectedCity">
+              <text class="cuIcon-list"></text>
+              <text class="cityBtn">{{cityNameArr[cityCur].name}}</text>
+            </view>
+            <view class="key-words">
+              <text class="cuIcon-search"></text>
+              <input class="keyInput" type="text" name="keyWords" id="keyWords" placeholder="大家都在搜：那好吃"
+                value="{{keyWords}}" confirm-type="search" bindtap="onSearchFocus" bindinput="onInputKeyWords"
+                bindconfirm="onGoSearch" />
+            </view>
+          </view>
+          <text class="closeSearch {{isSearchFocus?'ShowCloseSearch':''}}" bindtap="onSearchBlur">取消</text>
+        </view>
+        <view class="all-city" wx:if="{{isShowAllCity}}">
+          <view class="main bg-white {{isShowMain?'ShowMain':''}}">
+            <scroll-view scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+              <view class="remind">
+                <text>点击即可选择</text>
+              </view>
+              <block wx:for="{{cityList}}" wx:key="index">
+                <view class="city {{index == cityCur?'selectedCity':''}}" bindtap="onFilterCity"
+                  data-cityCur="{{index}}">
+                  <text>{{item.name}}</text>
+                </view>
+              </block>
+            </scroll-view>
+          </view>
+          <view class="main-mask {{isShowMain?'main-ShowMask':''}}" bindtap="onSelectedCity"></view>
+        </view>
+        <view class="search-module bg-white" wx:if="{{isSearchFocus}}">
+          <scroll-view class=" bg-white" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true">
+            <view class="module" wx:if="{{keyWords.length == 0}}">
+              <block wx:for="{{keyWordList}}" wx:for-item="module" wx:key="index">
+                <view class="main" wx:if="{{module.data.length > 0}}">
+                  <view class="title">
+                    <text>{{module.title}}</text>
+                    <van-icon class="icon" name="delete-o" bindtap="clearRecord" wx:if="{{module.type == 1}}" />
+                  </view>
+                  <view class="content">
+                    <view class="keyWordList">
+                      <text class="keyWord" wx:for="{{module.data}}" wx:key="index" bindtap="onInputKey"
+                        data-keyWords="{{item}}">{{item}}</text>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+            <view class="return-keyWord" wx:else>
+              <block wx:for="{{searchListData}}" wx:key="index">
+                <view class="reshop-Info" bindtap="onGoShop" data-shopdata="{{tips[index]}}" data-isR="yes">
+                  <view class="info">
+                    <view class="reshop-icon">
+                      <van-icon name="shop-o" />
+                    </view>
+                    <view class="reshop-name">
+                      <text wx:for="{{item.name}}" wx:key="name"
+                        class="{{item == keyWords ? 'high' : '' }}">{{item}}</text>
+                    </view>
+                  </view>
+                  <view class="address">{{item.district + item.address}}</view>
+                </view>
+              </block>
+              <view class="searchListData-no" wx:if="{{searchListData.length == 0}}">未搜索到有关<text
+                  class="high">{{keyWords}}</text>的门店
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="menu-main bg-white">
+          <van-dropdown-menu duration="400" close-on-click-overlay="true">
+            <van-dropdown-item id="menu1" value="{{ value1 }}" options="{{ menu1 }}" bind:change="onChange"
+              data-menutype="1" />
+            <van-dropdown-item id="menu2" value="{{ value2 }}" options="{{ menu2 }}" bind:change="onChange"
+              data-menutype="2" />
+            <van-dropdown-item id="menu3" title="{{ menu3 }}" icon="filter-o" bind:change="onChange" data-menutype="3">
+              <view class="sift-menu">
+                <view class="slider-price">
+                  <view class="title">人均价格区间（元）</view>
+                  <view class="inputPrice">
+                    <input type="number" placeholder="自定最低价" />
+                    <view class="hr-x"></view><input type="number" placeholder="自定最高价" />
+                  </view>
+                </view>
+                <view class="business-hours">
+                  <view class="title">营业时间</view>
+                  <block wx:for="{{businessHours.time}}" wx:key="index">
+                    <view class="time {{index == businessHours.selected[index]?'selectedTime':''}}"
+                      data-timeCur="{{index}}" bindtap="onBusinessHours">
+                      <text>{{item}}</text>
+                    </view>
+                  </block>
+                </view>
+                <view class="btn">
+                  <view class="reset">重置</view>
+                  <view class="hr-y"></view>
+                  <view class="finish" bindtap="hideMenu">完成</view>
+                </view>
+              </view>
+            </van-dropdown-item>
+          </van-dropdown-menu>
+        </view>
+      </van-button>
+    </van-sticky>
+    <block wx:for="{{tempShopList}}" wx:key="index" wx:if="{{tempShopList.length>0}}">
+      <view class="search-shop" bindtap="onGoShop" data-shopdatacur="{{index}}" data-isR="no">
+        <view class="shop-logo">
+          <image src="{{item.logoUrl}}" mode="aspectFill"></image>
+        </view>
+        <view class="shop-info">
+          <view class="title">{{item.name}}</view>
+          <view class="other">
+            <van-rate value="{{item.score}}" size="{{ 22 }}rpx" allow-half readonly color="#FFD21E" void-color="#eee"
+              void-icon="star" />
+            <text class="score">{{item.score.length>0?item.score:"暂无评"}}分</text>
+            <!-- <text class="time-required">10分钟</text> -->
+            <!-- <text class="distance">{{item._distance}}m</text> -->
+          </view>
+          <view class="address">{{item.address}}</view>
+          <view class="perCapita">人均 <text>￥{{item.perCapita}}</text></view>
+          <view class="recommended-dishes">
+            <swiper previous-margin="30rpx" next-margin="290rpx" snap-to-edge="true">
+              <block wx:for="{{4}}" wx:key="index">
+                <swiper-item>
+                  <view class="dishes">
+                    <view class="dishes-img">
+                      <image src="http://14179575.s21i.faiusr.com/2/ABUIABACGAAgidiGywUo-8aSTjDYBDiQAw.jpg"
+                        mode="aspectFill"></image>
+                    </view>
+                    <view class="title">【劲爆价】超级菌...</view>
+                    <view class="price">￥<text>38.8</text></view>
+                  </view>
+                </swiper-item>
+              </block>
+            </swiper>
+          </view>
+        </view>
+      </view>
+    </block>
+    <wxc-loadmore icon="{{true}}" text="正在努力加载中..." wx:if="{{tempShopList.length==0}}"></wxc-loadmore>
+  </scroll-view>
+</view>

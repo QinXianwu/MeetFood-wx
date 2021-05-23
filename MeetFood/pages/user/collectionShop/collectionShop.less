@@ -1,0 +1,64 @@
+@color-03: #333333;
+@color-06: #666666;
+@color-09: #999999;
+@color-0c3: #c3c3c3;
+@color-0c1: #c1c1c1;
+@color-0f1: #f1f1f1;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.collectionShop {
+  .main {
+    .row;
+    margin: 20rpx;
+    padding: 15rpx 15rpx 20rpx;
+    border-radius: 8rpx;
+    border-top-right-radius: none;
+    border-bottom-right-radius: none;
+
+    .logo {
+      width: 130rpx;
+      height: 130rpx;
+      border-radius: 10rpx;
+      margin: 0 20rpx 0 0;
+
+      image {
+        width: 100%;
+        height: 100%;
+        border-radius: 10rpx;
+      }
+    }
+
+    .info {
+      width: 480rpx;
+
+      .title {
+        color: @color-03;
+        font-size: 30rpx;
+      }
+    }
+
+    .delete {
+      position: relative;
+      left: 20rpx;
+      font-size: 26rpx;
+    }
+  }
+}
+
+.empty {
+  width: 100%;
+  text-align: center;
+  font-size: 48rpx;
+  color: #c1c1c1;
+  margin: 245rpx 0;
+}

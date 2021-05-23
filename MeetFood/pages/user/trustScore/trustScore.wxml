@@ -1,0 +1,5 @@
+<view class="trustScore">
+  <view class="main">
+    <van-empty image="error" description="该功能尚未开放" />
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-notify": "@vant/weapp/notify/index"
+  },
+  "navigationBarTitleText": "意见反馈"
+}

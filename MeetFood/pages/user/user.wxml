@@ -1,0 +1,71 @@
+<view class="user bg-white">
+  <view class="main">
+    <view class="setUp" bindtap="onSetupNavigateTo">
+      <view class="icon">
+        <van-icon name="setting-o" />
+      </view>
+    </view>
+    <view class="userInfo">
+      <view class="avatar" bindtap="onSetupNavigateTo">
+        <image src="{{cloudUserData.AVATAR_URL}}"></image>
+      </view>
+      <view class="info" bindtap="onSetupNavigateTo">
+        <view class="username">{{cloudUserData._NICKNAME}}</view>
+        <view class="level">
+          <text class="icon">Level</text>
+          <text class="value">{{cloudUserData.LEVEL}}</text>
+        </view>
+      </view>
+      <view class="sign-in" bindtap="onCheckLogin">
+        <van-icon name="award" />
+        <text>签到</text>
+      </view>
+    </view>
+    <view class="apply bg-white">
+      <view class="top">
+        <view class="growth-value" bindtap="onGrowthValue">
+          <van-icon name="fire-o" />
+          <text>成长值{{cloudUserData.GROWTH_VALUE}}</text>
+        </view>
+        <view class="subscribe-shop" bindtap="onCollectionShop">
+          <van-icon name="shop-collect-o" />
+          <text>订阅门店{{cloudUserData.CollectionShopLength}}</text>
+        </view>
+        <view class="trust-points" bindtap="onTrustScore">
+          <van-icon name="gem-o" />
+          <text>信任分{{cloudUserData.TRUST_SCORE}}</text>
+        </view>
+      </view>
+      <view class="orders">
+        <view class="top">
+          <view class="title" bindtap="onOrdersNavigateTo" data-active="0">我的订单</view>
+          <view class="allOrders" bindtap="onOrdersNavigateTo" data-active="0">
+            <text>查看全部</text>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+        <view class="main">
+          <view class="pending-payment" bindtap="onOrdersNavigateTo" data-active="1">
+            <van-icon name="pending-payment" />
+            <text>待付款</text>
+          </view>
+          <view class="pending-used" bindtap="onOrdersNavigateTo" data-active="2">
+            <van-icon name="tosend" />
+            <text>待使用</text>
+          </view>
+          <view class="pending-evaluated" bindtap="onOrdersNavigateTo" data-active="3">
+            <van-icon name="comment-o" />
+            <text>待评价</text>
+          </view>
+          <view class="refunds-aftermarket" bindtap="onOrdersNavigateTo" data-active="4">
+            <van-icon name="refund-o" />
+            <text>退款/售后</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="yuqing-logo">
+  <image src="../../images/yuqing-logo.png" mode="aspectFit"></image>
+</view>

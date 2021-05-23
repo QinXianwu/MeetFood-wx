@@ -1,0 +1,68 @@
+<view class="growthValue">
+  <view class="main">
+    <view class="userInfo bg-white">
+      <view class="userAvatar">
+        <image src="{{userInfo.AVATAR_URL}}" mode="aspectFill"></image>
+      </view>
+      <view class="userId">{{userInfo._id}}</view>
+      <view class="value">
+        <text>成长值：{{userInfo.GROWTH_VALUE}}</text>
+        <text>积分：{{userInfo.INTEGRAL}}</text>
+      </view>
+    </view>
+    <view class="level bg-white">
+      <view class="level-value"
+        style="left:{{userInfo.GROWTH_VALUE/10 - 5 > 0 ? userInfo.GROWTH_VALUE/10 - 5 : userInfo.GROWTH_VALUE/10}}%;">
+        <text wx:if="{{userInfo.LEVEL!=5}}">{{userInfo.GROWTH_VALUE}}/200</text>
+        <text wx:else>999+</text>
+      </view>
+      <view class="bar">
+        <van-progress percentage="{{(userInfo.GROWTH_VALUE + 50)/10}}" show-pivot="{{false}}" stroke-width="10"
+          pivot-color="#F44336" color="#F44336" wx:if="{{userInfo.LEVEL!=5}}" />
+        <van-progress percentage="100" show-pivot="{{false}}" stroke-width="10" pivot-color="#F44336" color="#F44336"
+          wx:else />
+      </view>
+      <view class="level-icon">
+        <block wx:for="{{5}}" wx:key="index">
+          <view class="icon {{userInfo.LEVEL == index + 1?'level-Y':''}}">
+            <text class="cuIcon-vip"></text>
+            <text>{{index+1}}</text>
+          </view>
+        </block>
+      </view>
+      <view class="required-value">
+        <text wx:if="{{userInfo.LEVEL!=5}}">距离下一等级还需{{200-userInfo.GROWTH_VALUE}}点</text>
+        <text wx:else>您已成为顶级会员</text>
+      </view>
+    </view>
+    <view class="level-privilege bg-white">
+      <view class="title">我的特权</view>
+      <view class="privilege-list">
+        <block wx:for="{{lprivilegeList}}" wx:key="index">
+          <view class="privilege" wx:if="{{userInfo.LEVEL >= index+1}}">
+            <view class="privilege-icon">
+              <text class="cuIcon-{{item.icon}} {{item.icon}}-bg"></text>
+            </view>
+            <text>{{item.title}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="task-growth bg-white">
+      <view class="title">成长任务</view>
+      <view class="task-list">
+        <block wx:for="{{taskList}}" wx:key="index">
+          <view class="task">
+            <view class="content">
+              <view class="name">{{item.name}}</view>
+              <view class="value">+{{item.value}}成长值</view>
+            </view>
+            <view class="goTask" bindtap="onGoTask" data-task="{{item}}">
+              <text class="go">{{item.goValue}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

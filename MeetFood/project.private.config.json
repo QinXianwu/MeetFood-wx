@@ -1,0 +1,36 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/booking/booking",
+          "pathName": "pages/booking/booking",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/user",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shop/shop",
+          "pathName": "pages/shop/shop",
+          "query": "shopData=%7B%22id%22%3A%223306126868731849882%22%2C%22title%22%3A%22%E6%B8%85%E8%A5%BF%E7%BE%8E%E9%A3%9F%E8%A1%97%22%2C%22address%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B8%85%E8%BF%9C%E5%B8%82%E6%B8%85%E5%9F%8E%E5%8C%BA%E6%9D%BE%E5%B2%97A91%E5%BC%80%E5%8F%91%E5%8C%BA25...%22%2C%22tel%22%3A%22%22%2C%22category%22%3A%22%E7%BE%8E%E9%A3%9F%3A%E5%B0%8F%E5%90%83%E5%BF%AB%E9%A4%90%22%2C%22type%22%3A0%2C%22location%22%3A%7B%22lat%22%3A23.6979%2C%22lng%22%3A113.062692%7D%2C%22_distance%22%3A5.52%2C%22ad_info%22%3A%7B%22adcode%22%3A441802%2C%22province%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%22%2C%22city%22%3A%22%E6%B8%85%E8%BF%9C%E5%B8%82%22%2C%22district%22%3A%22%E6%B8%85%E5%9F%8E%E5%8C%BA%22%7D%2C%22logo%22%3A%22https%3A%2F%2Fcp1.douguo.com%2Fupload%2Fcaiku%2F9%2F9%2Fd%2F400x266_99f04e0afa16d9d93358470bebbd0ead.jpeg%22%2C%22perCapita%22%3A%2283%22%2C%22score%22%3A%224.5%22%7D",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

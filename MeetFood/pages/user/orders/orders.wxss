@@ -1,0 +1,12 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.orders .main {
+  display: flex;
+  flex-direction: column;
+}

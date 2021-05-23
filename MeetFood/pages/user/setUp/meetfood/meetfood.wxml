@@ -1,0 +1,15 @@
+<view class="meetfood bg-white">
+  <view class="mian">
+    <view class="logo">
+      <image src="{{imageSrc}}" mode="aspectFill"></image>
+    </view>
+    <view class="content">
+      <view class="name">遇见食途</view>
+      <view class="version">测试版 1.0.0</view>
+    </view>
+    <view class="copyright-notice">
+      <view class="notice-all">屿晴工作室 版权所有</view>
+      <view class="record">Copyright © 2020-2021 粤ICP备20072192号</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<view class="collectionShop" wx:if="{{shopList.length > 0}}">
+  <block wx:for="{{shopList}}" wx:key="index">
+    <view class="main bg-white">
+      <view class="logo">
+        <image src="{{item.LOGOURL}}" mode="aspectFill"></image>
+      </view>
+      <view class="info">
+        <view class="title">{{item.TITLE}}</view>
+        <van-rate value="{{item.SCORE}}" size="{{ 26 }}rpx" allow-half readonly color="#F73E3E" void-color="#eee"
+          void-icon="star" />
+        <text style="font-size: 24rpx;margin: 0 0 0 10rpx;">{{item.SCORE.length > 0?"":"暂无评分"}}</text>
+      </view>
+      <view class="delete" bindtap="onDelete" data-cur="{{index}}">
+        <van-icon name="delete-o" />
+      </view>
+    </view>
+  </block>
+</view>
+<view class="empty" wx:else>暂无订阅</view>
