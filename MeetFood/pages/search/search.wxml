@@ -116,7 +116,7 @@
         <view class="shop-info">
           <view class="title">{{item.name}}</view>
           <view class="other">
-            <van-rate value="{{item.score}}" size="{{ 22 }}rpx" allow-half readonly color="#FFD21E" void-color="#eee"
+            <van-rate value="{{item.score}}" size="{{ 22 }}rpx" allow-half readonly color="#F73E3E" void-color="#eee"
               void-icon="star" />
             <text class="score">{{item.score.length>0?item.score:"暂无评"}}分</text>
             <!-- <text class="time-required">10分钟</text> -->
